@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Scramble</title>
+</head>
+<body>
+    <h1>A Javascript Word Scramble Game</h1>
+
+    <script>
+    "use strict";
+
+        var WORDS     = ["booger", "apple", "hackbright", "mango", "balloonicorn", "pineapple", "hacker", "javascript", "ubermelon", "densuke"];
+        var SCRAMBLED = ["oogreb", "papel", "backrhight", "goman", "obnlcaonlior", "pialpeepn", "ahkcer", "sacrjiaptv", "runeomlbe", "eeknuds"];
+
+        var wordChoiceIndex = Math.floor(Math.random() * 10);
+
+        var wordChoice = SCRAMBLED[wordChoiceIndex]
+
+        var playing = true;
+
+        while (playing) {
+
+            var guess = prompt("The scrambled word is: " + wordChoice, "Guess the word");
+
+            if (guess.toLowerCase().trim() === WORDS[wordChoiceIndex]) {
+                alert("Congratulations, you got it!")
+            }
+
+            else if (guess !== WORDS[wordChoiceIndex]) {
+                alert("Try again, your guess was incorrect.")
+            }
+
+            playing = confirm("Press OK To keep playing or Cancel to quit");
+        }
+
+        alert("goodbye!");
+    </script>
+    
+</body>
+</html>
